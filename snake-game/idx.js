@@ -56,7 +56,6 @@ const changeDirection = e => {
 controls.forEach(button => button.addEventListener('click', () => changeDirection({key: button.dataset.key})));
 
 const initGame = () => {
-    console.log('xxxxx');
     if (gameOver) return handleGameOver();
     
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
