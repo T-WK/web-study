@@ -31,3 +31,7 @@
 
 3. Javascript: setInterval(), clearInterval()
     후추
+
+
+## Snake Game with Vue
+숙련도 이슈로 인한 잠정 중단.
