@@ -22,3 +22,26 @@
     </OutputInfo>
   </div>
 </template>
+
+
+<style scoped>
+  .flex{
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-space{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .output-container{
+    background-color: #587ef4;
+    color: #fff;
+    border-radius: 0.3em;
+    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+    margin: 2em 0;
+    padding: 1.2em;
+  }
+</style>
