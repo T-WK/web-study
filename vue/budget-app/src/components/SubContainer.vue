@@ -1,37 +1,37 @@
 <script setup lang="ts">
-  import AmountContainer from './AmountContainer.vue'
+  import TotalAmountContainer from './TotalAmountContainer.vue'
+  import UserAmountContainer from './UserAmountContainer.vue'
   
-  import { ref } from 'vue';
+  import { ref, watch } from 'vue';
+  import type { Ref } from 'vue';
 
 
   const words = ref([
     {title: 'Budget', errorMessage: 'Value cannot be empty or negative'},
     {title: 'Expenses', errorMessage: 'Value cannot be empty'}
   ])
+
+  const tempAmount:Ref<number | string> = ref(0)
+
+  watch(tempAmount, () => {
+    console.log(tempAmount.value)
+  })
 </script>
 
 <template>
   <div class="sub-container">
-    <AmountContainer 
+    <TotalAmountContainer 
     :title="words[0].title" 
     :errorMsg="words[0].errorMessage" 
+    v-model="tempAmount"
     >
-      <template v-slot:inputs>
-        <input type="number" id="total-amount" placeholder="Enter Total Amount">
-        <button class="submit" id="total-amount-button">Set Budget</button>
-      </template>
-    </AmountContainer>
+    </TotalAmountContainer>
 
-    <AmountContainer 
-    :title="words[0].title" 
-    :errorMsg="words[0].errorMessage" 
+    <UserAmountContainer 
+    :title="words[1].title" 
+    :errorMsg="words[1].errorMessage" 
     >
-      <template v-slot:inputs>
-        <input type="text" class="product-title" id="product-title" placeholder="Enter Title Of Product">
-        <input type="number" id="user-amount" placeholder="Enter Cost Of Product">
-        <button class="submit" id="check-amount">Check Amount</button>
-      </template>
-    </AmountContainer>
+    </UserAmountContainer>
   </div>
 </template>
 
